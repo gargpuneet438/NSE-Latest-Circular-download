@@ -1,0 +1,97 @@
+{
+  "id": "f898e4e7-611d-4d87-891b-12aff87c3d87",
+  "version": "2.0",
+  "name": "nse data check",
+  "url": "https://www.nseindia.com/",
+  "tests": [{
+    "id": "7f569822-6a18-4cea-86e8-db9d48e443ce",
+    "name": "latest circular download",
+    "commands": [{
+      "id": "94a15fdb-9235-4490-a904-63825374c557",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.nseindia.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9468807a-47e5-4093-9009-871e79da7a91",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "800x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f1a5df7c-d314-45ec-a4ef-d45cc3175c1a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Circulars",
+      "targets": [
+        ["linkText=Circulars", "linkText"],
+        ["css=li:nth-child(4) > .link", "css:finder"],
+        ["xpath=//a[contains(text(),'Circulars')]", "xpath:link"],
+        ["xpath=//div[@id='betaVerBand']/div/div/div/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/resources/exchange-communication-circulars')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Circulars')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "98e3f625-a1da-4a17-a148-b599c39e04bf",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Download (.csv)",
+      "targets": [
+        ["linkText=Download (.csv)", "linkText"],
+        ["css=.xlsdownload > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Download (.csv)')]", "xpath:link"],
+        ["xpath=//a[@onclick='downloadCSV()']", "xpath:attributes"],
+        ["xpath=//div[@id='circulars-exch-comm']/div[4]/div/div/div[2]/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'JavaScript:;')])[7]", "xpath:href"],
+        ["xpath=//div[2]/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Download (.csv)')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win9068",
+      "windowTimeout": 100000
+    }, {
+      "id": "9402396d-8812-44ef-9c90-036289b6947f",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9057b864-cc22-4515-94ae-19e4081b6af8",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win9068}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "241b993a-6abf-4e6d-a54a-e6c1a143974b",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a2fccf63-f840-4246-8d1d-95dfe7fd091d",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "d8dff05e-c180-41a3-9033-64963f0c628c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.nseindia.com/"],
+  "plugins": []
+}
